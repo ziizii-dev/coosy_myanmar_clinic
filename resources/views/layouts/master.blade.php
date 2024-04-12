@@ -33,9 +33,11 @@
     <link href="{{asset('admin/vendor/slick/slick.css" rel="stylesheet')}}" media="all">
     <link href="{{asset('admin/vendor/select2/select2.min.css" rel="stylesheet')}}" media="all">
     <link href="  {{asset('admin/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+   
     <!-- Main CSS-->
     <link href="    {{asset('admin/css/theme.css')}}" rel="stylesheet" media="all">
+
 
 </head>
 
@@ -57,7 +59,6 @@
         </div>
 
     </div>
-
     <!-- Jquery JS-->
     <script src="{{asset('admin/vendor/jquery-3.2.1.min.js')}}"></script>
     <!-- Bootstrap JS-->
@@ -81,6 +82,33 @@
 
     <!-- Main JS-->
     <script src="  {{asset('admin/js/main.js')}}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        @if(Session::has('message'))
+        var type = "{{ Session::get('alert-type','info') }}"
+        switch(type){
+           case 'info':
+           toastr.info(" {{ Session::get('message') }} ");
+           break;
+
+           case 'success':
+           toastr.success(" {{ Session::get('message') }} ");
+           break;
+
+           case 'warning':
+           toastr.warning(" {{ Session::get('message') }} ");
+           break;
+
+           case 'error':
+           toastr.error(" {{ Session::get('message') }} ");
+           break;
+        }
+        @endif
+       </script>
+
+
+
 
 </body>
 

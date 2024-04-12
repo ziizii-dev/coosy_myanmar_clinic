@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger("clinic_id");
             $table->string("day_of_week");
-            $table->time("opening_hour")->default("10:00:00");
-            $table->time("closing_hour")->default("19:00:00");
-            $table->boolean("is_holiday")->default(0);
+            $table->time("opening_hour")->default("10:00:00")->nullable();
+            $table->time("closing_hour")->default("19:00:00")->nullable();
+            $table->boolean("is_holiday")->default(0)->nullable();
             $table->timestamps();
         });
     }

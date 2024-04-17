@@ -25,10 +25,11 @@ Route::get('/', function () {
 
 Route::get('registerPage',[AuthController::class,'registerPage'])->name('auth.registerPage');
 Route::post('user/register',[AuthController::class,'userRegister'])->name('register');
+Route::get('loginPage',[AuthController::class,'loginPage'])->name('auth.loginPage');
+
 Route::middleware(['auth'])->group(function(){
     //login, register
     Route::redirect('/', 'loginPage');
-    Route::get('loginPage',[AuthController::class,'loginPage'])->name('auth.loginPage');
     Route::get('dashboard',[AuthController::class,'dashboard'])->name('dashboard');
     Route::get('logout',[AuthController::class,'adminDestroy'])->name('admin.logout');
     Route::get('profile',[AuthController::class,'adminProfile'])->name('admin.profile');

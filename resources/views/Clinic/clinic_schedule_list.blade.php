@@ -77,7 +77,7 @@
 
             </div>
             <div class="col-7 mb-4">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#create_clinic">Addff Schedule</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#create_clinic">Add Schedule</button>
                 {{-- <select class="form-control select2 m-b-10" name="category_id" style="width: 100%"  onchange="showSubCategoryUpdate(this.value)">
                     @foreach($clinics as $clinic)
                     <option value="{{$clinic->id}}"  >{{$clinic->name}}</option>
